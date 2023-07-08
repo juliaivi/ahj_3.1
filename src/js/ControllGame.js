@@ -1,4 +1,4 @@
-import moveGoblin from './moveGoblin';
+import MoveGoblin from './MoveGoblin';
 
 export default class ControllGame {
   constructor(board) {
@@ -10,16 +10,10 @@ export default class ControllGame {
 
   init() {
     this.board.draw(this.boardSize, this.hitCounter, this.missCounter);
-    moveGoblin(this.boardSize);
-    this.start();
+    const moveGoblin = new MoveGoblin();
+    moveGoblin.moving();
     this.cells = document.querySelector('.board');
     this.cells.addEventListener('click', this.onBoardClick.bind(this));
-  }
-
-  start() {
-    setInterval(() => {
-      moveGoblin(this.boardSize);
-    }, 1000);
   }
 
   onBoardClick(event) {

@@ -1,16 +1,20 @@
-export default function moveGoblin(el) {
-  let oldPosition = null;
-  const position = Math.floor(Math.random() * el ** 2);
-  if (position === oldPosition && oldPosition !== null) {
-    moveGoblin(el);
+export default class MoveGoblin {
+  constructor() {
+    this.oldPosition = null;
   }
 
-  const cells = document.querySelectorAll('.cell');
-  cells.forEach((elem) => {
-    elem.classList.remove('active');
-    if (Number(elem.getAttribute('data-id')) === position) {
-      elem.classList.add('active');
-    }
-  });
-  oldPosition = position;
+  moving() {
+    document.addEventListener('DOMContentLoaded', () => {
+      const cell = document.querySelectorAll('.cell');
+      setInterval(() => {
+        if (this.oldPosition !== null) {
+          cell[this.oldPosition].classList.remove('active');
+        }
+        const random = Math.floor(Math.random() * cell.length);
+        const element = cell[random];
+        this.oldPosition = random;
+        element.classList.add('active');
+      }, 1000);
+    });
+  }
 }
