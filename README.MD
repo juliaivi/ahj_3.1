@@ -1,7 +1,7 @@
  бейджик сборки через Appveyor [![Build status](https://ci.appveyor.com/api/projects/status/owguk62ygs70uw0s?svg=true)](https://ci.appveyor.com/project/juliaivi/ahj-3-1)
 
 # Домашнее задание к занятию "3.Обработка событий"
-
+https://juliaivi.github.io/ahj_3.1/
 Правила сдачи задания:
 
 1. **Важно**: в рамках этого ДЗ нужно использовать менеджер пакетов yarn (а значит, никакого `package-lock.json` в репозитории быть не должно)
